@@ -16,6 +16,11 @@ export default tseslint.config(
 			ecmaVersion: 2020, // Sets the ECMAScript version to 2020 for parsing modern JavaScript features.
 			globals: globals.browser, // Includes browser global variables.
 		},
+		settings: {
+			react: {
+				version: "detect" // Automatically detects the version of React to use.
+			}
+		},
 		plugins: {
 			"react-hooks": reactHooks,
 			"react-refresh": reactRefresh,
@@ -86,7 +91,9 @@ export default tseslint.config(
 			"@stylistic/rest-spread-spacing": [ "error", "never" ], // Disallows spaces between rest and spread operators and their expressions.
 			"@stylistic/lines-between-class-members": [ "error", "always" ], // Requires an empty line between class members.
 			"@stylistic/multiline-ternary": [ "error", "always-multiline" ], // Requires ternary expressions to be split across multiple lines.
-			"@stylistic/space-infix-ops": [ "error", { "int32Hint": false } ], // Requires spaces around infix operators (+ - * / % ? etc.)
+			"@stylistic/space-infix-ops": [ "error", {
+				"int32Hint": false
+			} ], // Requires spaces around infix operators (+ - * / % ? etc.)
 			"@stylistic/no-mixed-spaces-and-tabs": [ "error" ],
 			"@stylistic/no-multi-spaces": [ "error" ], // Disallows multiple space characters
 			"@stylistic/semi": [ "error", "always" ],
