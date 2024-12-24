@@ -10,15 +10,15 @@ import noRelative from "eslint-plugin-no-relative-import-paths";
 
 export default tseslint.config(
 	{
-		extends: [ js.configs.recommended, ...tseslint.configs.recommended ], // Extends recommended rules from both JS and TypeScript ESLint configs.
-		files: [ "formatted/**/*.{js,jsx,mjs,cjs,ts,tsx}", "eslint.config.js" ], // Specifies the file types to lint.
+		extends: [ js.configs.recommended, ...tseslint.configs.recommended ],
+		files: [ "formatted/**/*.{js,jsx,mjs,cjs,ts,tsx}", "eslint.config.js" ],
 		languageOptions: {
-			ecmaVersion: 2020, // Sets the ECMAScript version to 2020 for parsing modern JavaScript features.
-			globals: globals.browser, // Includes browser global variables.
+			ecmaVersion: 2020,
+			globals: globals.browser,
 		},
 		settings: {
 			react: {
-				version: "detect" // Automatically detects the version of React to use.
+				version: "detect"
 			}
 		},
 		plugins: {
@@ -30,20 +30,20 @@ export default tseslint.config(
 			"no-relative-import-paths": noRelative
 		},
 		rules: {
-			...reactHooks.configs.recommended.rules, // Inherits all recommended hook rules.
-			"react-refresh/only-export-components": [ // Validate that your components can safely be updated with Fast Refresh. https://github.com/ArnaudBarre/eslint-plugin-react-refresh
+			...reactHooks.configs.recommended.rules,
+			"react-refresh/only-export-components": [
 				"warn",
 				{
 					allowConstantExport: true
 				},
 			],
-			"no-relative-import-paths/no-relative-import-paths": [ // Do not allow relative import paths except from the same folder.
+			"no-relative-import-paths/no-relative-import-paths": [
 				"error",
 				{
 					"allowSameFolder": true
 				}
 			],
-			"import-newlines/enforce": [ // Place imports on separate lines.
+			"import-newlines/enforce": [
 				"error",
 				{
 					"items": 1,
@@ -51,51 +51,51 @@ export default tseslint.config(
 					forceSingleLine: false
 				}
 			],
-			"@stylistic/quotes": [ "error", "double" ], // Enforce double quotes.
-			"@stylistic/array-bracket-spacing": [ "error", "always" ], // Requires spaces inside array brackets.
-			"@stylistic/block-spacing": [ "error", "always" ], // Requires spaces inside of curly brackets
-			"@stylistic/brace-style": [ "error", "1tbs" ], // Enforces the one true brace style for block braces.
-			"@stylistic/computed-property-spacing": [ "error", "always" ], // Requires spacing around computed property names.
-			"@stylistic/dot-location": [ "error", "property" ], // Ensures dot notation is on the same line as the property.
-			"@stylistic/eol-last": [ "error", "always" ], // Requires a newline at the end of the file.
-			"@stylistic/func-call-spacing": [ "error", "never" ], // Disallows spaces between function names and the calling parenthesis.
-			"@stylistic/function-paren-newline": [ "error", "multiline-arguments" ], // Requires newlines if function parameters are multiline.
-			"@stylistic/function-call-argument-newline": [ "error", "always" ], // Requires newlines between function call arguments.
-			"@stylistic/jsx-quotes": [ "error", "prefer-double" ], // Prefer double quotes for JSX attributes
-			"@stylistic/no-extra-semi": [ "error" ], // Do not allow extra semicolons
-			"@stylistic/type-annotation-spacing": [ // Require a space after the colon in type annotations
+			"@stylistic/quotes": [ "error", "double" ],
+			"@stylistic/array-bracket-spacing": [ "error", "always" ],
+			"@stylistic/block-spacing": [ "error", "always" ],
+			"@stylistic/brace-style": [ "error", "1tbs" ],
+			"@stylistic/computed-property-spacing": [ "error", "always" ],
+			"@stylistic/dot-location": [ "error", "property" ],
+			"@stylistic/eol-last": [ "error", "always" ],
+			"@stylistic/func-call-spacing": [ "error", "never" ],
+			"@stylistic/function-paren-newline": [ "error", "multiline-arguments" ],
+			"@stylistic/function-call-argument-newline": [ "error", "always" ],
+			"@stylistic/jsx-quotes": [ "error", "prefer-double" ],
+			"@stylistic/no-extra-semi": [ "error" ],
+			"@stylistic/type-annotation-spacing": [
 				"error",
 				{
 					before: false,
 					after: true
 				}
 			],
-			"@stylistic/keyword-spacing": [ // Requires consistent spacing before and after keywords (if, else, for, etc.)
+			"@stylistic/keyword-spacing": [
 				"error",
 				{
 					before: true,
 					after: true
 				}
 			],
-			"@stylistic/indent": [ "error", "tab", { // Enforce tabs for indentation
-				"SwitchCase": 1 // Indent switch cases with	1 tab
+			"@stylistic/indent": [ "error", "tab", {
+				"SwitchCase": 1
 			} ],
-			"@stylistic/linebreak-style": [ "error", "unix" ], // Use Unix line endings "\n" (LF)
-			"@stylistic/key-spacing": [ // Enforces spacing between keys and values in object literal properties.
+			"@stylistic/linebreak-style": [ "error", "unix" ],
+			"@stylistic/key-spacing": [
 				"error",
 				{
 					beforeColon: false,
 					afterColon: true
 				}
 			],
-			"@stylistic/rest-spread-spacing": [ "error", "never" ], // Disallows spaces between rest and spread operators and their expressions.
-			"@stylistic/lines-between-class-members": [ "error", "always" ], // Requires an empty line between class members.
-			"@stylistic/multiline-ternary": [ "error", "always-multiline" ], // Requires ternary expressions to be split across multiple lines.
+			"@stylistic/rest-spread-spacing": [ "error", "never" ],
+			"@stylistic/lines-between-class-members": [ "error", "always" ],
+			"@stylistic/multiline-ternary": [ "error", "always-multiline" ],
 			"@stylistic/space-infix-ops": [ "error", {
 				"int32Hint": false
-			} ], // Requires spaces around infix operators (+ - * / % ? etc.)
+			} ],
 			"@stylistic/no-mixed-spaces-and-tabs": [ "error" ],
-			"@stylistic/no-multi-spaces": [ "error" ], // Disallows multiple space characters
+			"@stylistic/no-multi-spaces": [ "error" ],
 			"@stylistic/semi": [ "error", "always" ],
 			"@stylistic/padding-line-between-statements": [
 				"error",
@@ -151,7 +151,7 @@ export default tseslint.config(
 					ignoreChainWithDepth: 2
 				}
 			],
-			"sort-imports": [ // Sort imports alphabetically
+			"sort-imports": [
 				"error",
 				{
 					ignoreDeclarationSort: true
