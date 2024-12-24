@@ -62,7 +62,7 @@ export default SampleSimple;
 ```
 
 ## Introduction
-Spacey uses [ESLint](https://eslint.org/) and a collection of handy plugins to help you write clean, maintainable, and performant code React TypeScript code. The majority of the rules can apply automated fixes. It's a great idea to run them on save.
+Spacey uses [ESLint](https://eslint.org/) and a collection of handy plugins to help you write clean, maintainable, and performant React & TypeScript code. The majority of the rules can apply automated fixes. It's a great idea to run them on save.
 
 ## Guiding Principles
 1. **Readable Code**:
