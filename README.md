@@ -1,7 +1,7 @@
 # ✨ Spacey 🛰️
 ![black hole banner image with planets](./assets/banner.png)
 
-> A style guide & coding standard for React TypeScript projects that emphasizes meticulous organization, performance optimization, best practives, explicit clarity, and generous use of whitespace, taking one giant leap for code clarity and readability.
+> A style guide & coding standard for React TypeScript projects that emphasizes meticulous organization, performance optimization, best practices, explicit clarity, and generous use of whitespace, taking one giant leap for code clarity and readability.
 
 🚧**UNDER CONSTRUCTION**🏗️
 
