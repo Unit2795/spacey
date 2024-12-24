@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "npm run copy && eslint --fix",
+    "copy": "node -e \"require('fs-extra').copySync('original', 'formatted')\""
   },
   "keywords": [],
   "author": "",

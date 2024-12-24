@@ -11,7 +11,7 @@ import noRelative from "eslint-plugin-no-relative-import-paths";
 export default tseslint.config(
 	{
 		extends: [ js.configs.recommended, ...tseslint.configs.recommended ], // Extends recommended rules from both JS and TypeScript ESLint configs.
-		files: [ "**/*.{js,jsx,mjs,cjs,ts,tsx}", "eslint.config.js" ], // Specifies the file types to lint.
+		files: [ "formatted/**/*.{js,jsx,mjs,cjs,ts,tsx}", "eslint.config.js" ], // Specifies the file types to lint.
 		languageOptions: {
 			ecmaVersion: 2020, // Sets the ECMAScript version to 2020 for parsing modern JavaScript features.
 			globals: globals.browser, // Includes browser global variables.
@@ -57,62 +57,38 @@ export default tseslint.config(
 			"@stylistic/function-paren-newline": [ "error", "multiline-arguments" ], // Requires newlines if function parameters are multiline.
 			"@stylistic/function-call-argument-newline": [ "error", "always" ], // Requires newlines between function call arguments.
 			"@stylistic/jsx-quotes": [ "error", "prefer-double" ], // Prefer double quotes for JSX attributes
-			"@stylistic/no-extra-semi": [ "error" ],
-			"@stylistic/type-annotation-spacing": [
+			"@stylistic/no-extra-semi": [ "error" ], // Do not allow extra semicolons
+			"@stylistic/type-annotation-spacing": [ // Require a space after the colon in type annotations
 				"error",
 				{
 					before: false,
 					after: true
 				}
 			],
-			"no-redeclare": [ "error" ],
-			"sort-imports": [
-				"error",
-				{
-					ignoreDeclarationSort: true
-				}
-			],
-			"no-nested-ternary": [ "error" ],
-			"prefer-template": [ "error" ],
-			"prefer-const": [ "error" ],
-			"no-var": [ "error" ],
-			"no-lonely-if": [ "error" ],
-			"no-implicit-coercion": [ "error" ],
-			"no-useless-return": [ "error" ],
-			"no-useless-escape": [ "error" ],
-			"no-useless-catch": [ "error" ],
-			"no-unneeded-ternary": [ "error" ],
-			"no-regex-spaces": [ "error" ],
-			"no-extra-boolean-cast": [ "error" ],
-			"no-empty": [ "error" ],
-			eqeqeq: [ "error" ],
-			"valid-typeof": [ "error" ],
-			complexity: [ "warn", 12 ],
-			"dot-notation": [ "error" ],
-			"@stylistic/keyword-spacing": [
+			"@stylistic/keyword-spacing": [ // Requires consistent spacing before and after keywords (if, else, for, etc.)
 				"error",
 				{
 					before: true,
 					after: true
 				}
 			],
-			"@stylistic/indent": [ "error", "tab", {
-				"SwitchCase": 1
+			"@stylistic/indent": [ "error", "tab", { // Enforce tabs for indentation
+				"SwitchCase": 1 // Indent switch cases with	1 tab
 			} ],
-			"@stylistic/linebreak-style": [ "error", "unix" ],
-			"no-global-assign": [ "error" ],
-			"@stylistic/key-spacing": [
+			"@stylistic/linebreak-style": [ "error", "unix" ], // Use Unix line endings "\n" (LF)
+			"@stylistic/key-spacing": [ // Enforces spacing between keys and values in object literal properties.
 				"error",
 				{
 					beforeColon: false,
 					afterColon: true
 				}
 			],
-			"@stylistic/rest-spread-spacing": [ "error", "never" ],
-			"@stylistic/lines-between-class-members": [ "error", "always" ],
-			"@stylistic/multiline-ternary": [ "error", "always-multiline" ],
+			"@stylistic/rest-spread-spacing": [ "error", "never" ], // Disallows spaces between rest and spread operators and their expressions.
+			"@stylistic/lines-between-class-members": [ "error", "always" ], // Requires an empty line between class members.
+			"@stylistic/multiline-ternary": [ "error", "always-multiline" ], // Requires ternary expressions to be split across multiple lines.
+			"@stylistic/space-infix-ops": [ "error", { "int32Hint": false } ], // Requires spaces around infix operators (+ - * / % ? etc.)
 			"@stylistic/no-mixed-spaces-and-tabs": [ "error" ],
-			"@stylistic/no-multi-spaces": [ "error" ],
+			"@stylistic/no-multi-spaces": [ "error" ], // Disallows multiple space characters
 			"@stylistic/semi": [ "error", "always" ],
 			"@stylistic/padding-line-between-statements": [
 				"error",
@@ -168,6 +144,30 @@ export default tseslint.config(
 					ignoreChainWithDepth: 2
 				}
 			],
+			"sort-imports": [ // Sort imports alphabetically
+				"error",
+				{
+					ignoreDeclarationSort: true
+				}
+			],
+			"no-nested-ternary": [ "error" ],
+			"prefer-template": [ "error" ],
+			"prefer-const": [ "error" ],
+			"no-var": [ "error" ],
+			"no-lonely-if": [ "error" ],
+			"no-implicit-coercion": [ "error" ],
+			"no-useless-return": [ "error" ],
+			"no-useless-escape": [ "error" ],
+			"no-useless-catch": [ "error" ],
+			"no-unneeded-ternary": [ "error" ],
+			"no-regex-spaces": [ "error" ],
+			"no-extra-boolean-cast": [ "error" ],
+			"no-empty": [ "error" ],
+			eqeqeq: [ "error" ],
+			"valid-typeof": [ "error" ],
+			complexity: [ "warn", 12 ],
+			"dot-notation": [ "error" ],
+			"no-global-assign": [ "error" ],
 			"react/button-has-type": [ "error" ],
 			"react/no-access-state-in-setstate": [ "error" ],
 			"react/style-prop-object": [ "error" ],
@@ -217,7 +217,7 @@ export default tseslint.config(
 			"react/jsx-newline": [ "error" ],
 			"react/jsx-first-prop-new-line": [ "error", "multiline" ],
 			"react/jsx-max-props-per-line": [ "error" ],
-			"react/jsx-max-depth": [ "error", {
+			"react/jsx-max-depth": [ "warn", {
 				"max": 4
 			} ],
 			"react/jsx-key": [ "error", {
