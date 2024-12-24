@@ -7,6 +7,7 @@ import stylistic from "@stylistic/eslint-plugin";
 import eslintNewlinePlugin from "eslint-plugin-import-newlines";
 import reactPlugin from "eslint-plugin-react";
 import noRelative from "eslint-plugin-no-relative-import-paths";
+import newlineDestructuring from "eslint-plugin-newline-destructuring";
 
 export default tseslint.config(
 	{
@@ -27,7 +28,8 @@ export default tseslint.config(
 			"@stylistic": stylistic,
 			"import-newlines": eslintNewlinePlugin,
 			"react": reactPlugin,
-			"no-relative-import-paths": noRelative
+			"no-relative-import-paths": noRelative,
+			"newline-destructuring": newlineDestructuring
 		},
 		rules: {
 			...reactHooks.configs.recommended.rules,
@@ -37,6 +39,7 @@ export default tseslint.config(
 					allowConstantExport: true
 				},
 			],
+			"newline-destructuring/newline": "error",
 			"no-relative-import-paths/no-relative-import-paths": [
 				"error",
 				{

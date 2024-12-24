@@ -30,6 +30,9 @@ importers:
       eslint-plugin-import-newlines:
         specifier: ^1.4.0
         version: 1.4.0(eslint@9.17.0)
+      eslint-plugin-newline-destructuring:
+        specifier: ^1.2.2
+        version: 1.2.2(eslint@9.17.0)
       eslint-plugin-no-relative-import-paths:
         specifier: ^1.5.5
         version: 1.5.5
@@ -365,6 +368,11 @@ packages:
     hasBin: true
     peerDependencies:
       eslint: '>=6.0.0'
+
+  eslint-plugin-newline-destructuring@1.2.2:
+    resolution: {integrity: sha512-QfKQpdx+ez2E233B6xSG82+SdkKhxSchTJCjUHjJ2RmMCq+v2IBTaR8wK2pejTBV05p/J1qB8QOOKXQNqWJGSA==}
+    peerDependencies:
+      eslint: '>=7.2.0'
 
   eslint-plugin-no-relative-import-paths@1.5.5:
     resolution: {integrity: sha512-UjudFFdBbv93v0CsVdEKcMLbBzRIjeK2PubTctX57tgnHxZcMj1Jm8lDBWoETnPxk0S5g5QLSltEM+511yL4+w==}
@@ -1440,6 +1448,10 @@ snapshots:
   escape-string-regexp@4.0.0: {}
 
   eslint-plugin-import-newlines@1.4.0(eslint@9.17.0):
+    dependencies:
+      eslint: 9.17.0
+
+  eslint-plugin-newline-destructuring@1.2.2(eslint@9.17.0):
     dependencies:
       eslint: 9.17.0
 

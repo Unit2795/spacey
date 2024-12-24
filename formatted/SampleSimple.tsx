@@ -1,4 +1,8 @@
-function SampleSimple( { test, hello, world }: {
+function SampleSimple( {
+	test,
+	hello,
+	world
+}: {
 	test: string,
 	hello: number,
 	world: boolean
@@ -16,12 +20,11 @@ function SampleSimple( { test, hello, world }: {
 			<button
 				className="myclass"
 				type="button"
-				onClick={
-					handleClick
-				}
+				onClick={ handleClick }
 			>
 				Click me
 			</button>
+
 			<p>
 				Hello,World!
 			</p>
