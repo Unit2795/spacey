@@ -11,11 +11,11 @@
 **BEFORE**
 ```typescript jsx
 function SampleSimple({test, hello, world}:{test:string, hello:number, world: boolean}){
-	const handleClick = () => {console.log("clicked!")};
-	return<div>
-		<button type='button' onClick={handleClick} className={'myclass'}>Click me</button>
-		<p>Hello,World!</p>
-	</div>
+  const handleClick = () => {console.log(test, hello, world)};
+  return<div>
+    <button type='button' onClick={handleClick} className={'myclass'}>Click me</button>
+    <p>Hello,World!</p>
+  </div>
 }
 
 export default SampleSimple;;
@@ -24,34 +24,41 @@ export default SampleSimple;;
 **AFTER**
 ```typescript jsx
 function SampleSimple( {
-	test, hello, world
+  test,
+  hello,
+  world
 }: {
-	test: string,
-	hello: number,
-	world: boolean
+  test: string,
+  hello: number,
+  world: boolean
 } ) {
-	const handleClick = () => {
-		console.log( "clicked!" );
-	};
+  const handleClick = () => {
+    console.log(
+      test,
+      hello,
+      world
+    );
+  };
 
-	return (
-		<div>
-			<button
-				className="myclass"
-				type="button"
-				onClick={ handleClick }
-			>
-				Click me
-			</button>
+  return (
+    <div>
+      <button
+        className="myclass"
+        type="button"
+        onClick={ handleClick }
+      >
+        Click me
+      </button>
 
-			<p>
-				Hello,World!
-			</p>
-		</div>
-	);
+      <p>
+        Hello,World!
+      </p>
+    </div>
+  );
 }
 
 export default SampleSimple;
+
 ```
 
 ## Introduction
