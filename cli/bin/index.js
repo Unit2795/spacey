@@ -88,55 +88,77 @@ async function installDependencies() {
 	}
 }
 
-async function copyConfigFile( templateName, targetFileName ) {
-	const templatePath = path.join(
-		__dirname,
-		"..",
-		"template",
-		templateName
-	);
-	const targetPath = path.join(
-		process.cwd(),
-		targetFileName
-	);
+async function checkFileExists(filePath) {
+	try {
+		await fs.access(filePath);
+		return true;
+	} catch {
+		return false;
+	}
+}
+
+async function handleExistingFile(filePath, promptOverwrite = true) {
+	const exists = await checkFileExists(filePath);
+
+	if (!exists) return { exists: false, shouldContinue: true };
+
+	if (!promptOverwrite) return { exists: true, shouldContinue: true };
+
+	const { overwrite } = await inquirer.prompt([{
+		type: 'confirm',
+		name: 'overwrite',
+		message: `${path.basename(filePath)} already exists. Do you want to overwrite it?`,
+		default: false
+	}]);
+
+	return { exists: true, shouldContinue: overwrite };
+}
+
+async function copyExampleConfig() {
+	const templatePath = path.join(__dirname, '..', 'template', 'eslint.config.js');
+	const targetPath = path.join(process.cwd(), 'eslint.config.example.js');
+
+	try {
+		// Check if example config already exists
+		const exists = await checkFileExists(targetPath);
+
+		if (exists) {
+			console.log(chalk.yellow('eslint.config.example.js already exists, skipping...'));
+			return;
+		}
+
+		// Copy the template to example file
+		await fs.copyFile(templatePath, targetPath);
+		console.log(chalk.green('Successfully created eslint.config.example.js'));
+		console.log(chalk.blue('Tip: Remove ".example" from the filename to use this configuration'));
+	} catch (error) {
+		console.error(chalk.red('Error creating example config:'), error.message);
+		process.exit(1);
+	}
+}
+
+async function copySpaceyConfig() {
+	const templatePath = path.join(__dirname, '..', 'template', 'eslint-config-spacey.js');
+	const targetPath = path.join(process.cwd(), 'eslint-config-spacey.js');
 
 	try {
 		// Check if template exists
-		await fs.access( templatePath );
+		await fs.access(templatePath);
 
-		// Check if target file exists
-		const exists = await fs.access( targetPath )
-			.then( () => true )
-			.catch( () => false );
+		// Check if target exists, but allow skipping without rename
+		const { shouldContinue } = await handleExistingFile(targetPath);
 
-		// If file exists, use the .spacey variant so the user may reconcile the differences manually
-		const finalTargetPath = exists
-			? path.join(
-				process.cwd(),
-				targetFileName.replace(
-					".js",
-					".spacey.js"
-				)
-			)
-			: targetPath;
+		if (!shouldContinue) {
+			console.log(chalk.yellow('Skipping eslint-config-spacey.js...'));
+			return;
+		}
 
 		// Copy the file
-		await fs.copyFile(
-			templatePath,
-			finalTargetPath
-		);
-
-		if ( exists ) {
-			console.log( chalk.yellow( `Original ${ targetFileName } exists, created ${ path.basename( finalTargetPath ) } instead` ) );
-		} else {
-			console.log( chalk.green( `Successfully created ${ path.basename( finalTargetPath ) }` ) );
-		}
-	} catch ( error ) {
-		console.error(
-			chalk.red( "Error copying config file:" ),
-			error.message
-		);
-		process.exit( 1 );
+		await fs.copyFile(templatePath, targetPath);
+		console.log(chalk.green('Successfully copied eslint-config-spacey.js'));
+	} catch (error) {
+		console.error(chalk.red('Error copying eslint-config-spacey.js:'), error.message);
+		process.exit(1);
 	}
 }
 
@@ -171,10 +193,8 @@ async function main() {
 	}
 
 	// Copy eslint config file
-	await copyConfigFile(
-		"eslint.config.js",
-		"eslint.config.js"
-	);
+	await copyExampleConfig();
+	await copySpaceyConfig();
 
 	console.log( chalk.blue('Modify the eslint config file as necessary to ensure your files are tracked properly. Edit the "files" option to ensure the proper files are tracked. Edit the "languageOptions.parserOptions.project" option to ensure your proper tsconfig files are tracked.') );
 

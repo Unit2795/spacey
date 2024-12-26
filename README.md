@@ -3,11 +3,13 @@
 
 > A style guide & coding standard for React TypeScript projects that emphasizes meticulous organization, performance optimization, best practices, explicit clarity, and generous use of whitespace, taking one giant leap for code clarity and readability.
 
-🚧**UNDER CONSTRUCTION**🏗️
+🚧**ALPHA - UNDER ACTIVE DEVELOPMENT**🏗️
 
 -----
 
 ## Example
+Want to see more complex examples? Compare the [/original](./original) and [/formatted](./formatted) directories in the project root.
+
 **BEFORE**
 ```typescript jsx
 function SampleSimple({test, hello, world}:{test:string, hello:number, world: boolean}){
@@ -73,7 +75,16 @@ Spacey uses [ESLint](https://eslint.org/) and a collection of handy plugins to h
    1. Explicit patterns reduce ambiguities and potential runtime bugs. 
    2. Generous whitespace and structured formatting make debugging easier by isolating logic and visualizing code flow.
 3. **Performant and Predictable**: 
-   1. Avoid React footguns and implicit expectations that can lead to performance bottlenecks or unexpected behavior. Even at the cost of some verbosity. Code golf is not the goal.
+   1. Avoid some easier to catch React & JS footguns and implicit expectations that can lead to performance bottlenecks or unexpected behavior. Even at the cost of a little extra verbosity.
+
+## CLI
+[Spacey CLI](./cli/README.md) helps you set up the Spacey style guide's ESLint config in your project by optionally installing the dev dependencies and/or creating the ESLint configuration file (or a sample config file you can pick and choose from or use as inspiration).
+
+Try it out by running the following in your terminal:
+```shell
+npx spacey
+```
+
 
 ## Developer Guide
 Want to try messing around with the code?
@@ -93,9 +104,15 @@ Want to try messing around with the code?
 - [Google TypeScript Style Guide](https://google.github.io/styleguide/tsguide.html)
 - [Vite React TypeScript ESLint Setup](https://vite.dev/)
 
+## Troubleshooting
+- If any of the plugins/dependencies that Spacey relies on receive an update that produces breaking changes you will need to do one of the following:
+  - Submit an issue to the Spacey repo requesting an update
+  - Update the broken eslint rule
+  - Revert to a previous dependency versio
+  
+
 ## TODO
 - Continue to review rules and ensure they conform the general principles of the style guide
-- Create an NPX utility for easily integrating this style guide into a project
 - Add a visual diffing tool to compare the original code with the formatted code
 
 ## Contributing

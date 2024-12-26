@@ -7,8 +7,8 @@
     "spacey": "./bin/index.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "David Jozwik <d@djoz.us>",
+  "license": "MIT",
   "dependencies": {
     "chalk": "^5.4.1",
     "commander": "^12.1.0",
