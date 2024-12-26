@@ -40,6 +40,7 @@ function doBadStringConcat( name: string ) {
 const Sample = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const buttonRef = useRef(null);
+	const doubleNegation = "0";
 
 	const arrayExample =    [1, 2, 3];
 
@@ -58,6 +59,7 @@ const Sample = () => {
 			toggleOpen();
 		}} type={"button"}>Click me!</button>
 		<ul>{arrayExample.map(item=><li key={item} style={{color: isOpen ? 'red':'blue'}}>{item}</li>)}</ul>
+		{!!doubleNegation && <p>Double negation</p>}
 		{isOpen && <p>This is open!</p>}
     </div>);
 };

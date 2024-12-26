@@ -52,6 +52,7 @@ function doBadStringConcat( name: string ) {
 const Sample = () => {
 	const [ isOpen, setIsOpen ] = useState( false );
 	const buttonRef = useRef( null );
+	const doubleNegation = "0";
 
 	const arrayExample = [ 1, 2, 3 ];
 
@@ -108,6 +109,14 @@ const Sample = () => {
 					) )
 				}
 			</ul>
+
+			{
+				Boolean( doubleNegation ) && (
+					<p>
+						Double negation
+					</p>
+				)
+			}
 
 			{
 				isOpen
