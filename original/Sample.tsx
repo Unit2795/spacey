@@ -29,7 +29,7 @@ const keywordSpacing = (a: boolean) => {
 	}
 }
 
-function doBadStringConcat( name ) {
+function doBadStringConcat( name: string ) {
 	// Violates prefer-template, no-implicit-coercion, and single quotes
 	if (!!name) {
 		return 'Hello ' + name + '!';

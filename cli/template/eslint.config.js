@@ -12,12 +12,12 @@ import newlineDestructuring from "eslint-plugin-newline-destructuring";
 export default tseslint.config(
 	{
 		extends: [ js.configs.recommended, ...tseslint.configs.strictTypeChecked, ...tseslint.configs.stylisticTypeChecked ],
-		files: [ "formatted/**/*.{js,jsx,mjs,cjs,ts,tsx}", "eslint.config.js" ],
+		files: [ "**/*.{js,jsx,mjs,cjs,ts,tsx}", "eslint.config.js" ],
 		languageOptions: {
 			ecmaVersion: 2020,
 			globals: globals.browser,
 			parserOptions: {
-				project: [ "./formatted/tsconfig.json" ],
+				project: [ "./tsconfig.node.json", "./tsconfig.app.json" ],
 				tsconfigRootDir: import.meta.dirname,
 			}
 		},
@@ -135,10 +135,7 @@ export default tseslint.config(
 			"@stylistic/nonblock-statement-body-position": [ "error", "beside" ],
 			"@stylistic/object-curly-spacing": [ "error", "always" ],
 			"@stylistic/object-property-newline": [ "error" ],
-			"@stylistic/object-curly-newline": [
-				"error",
-				"always"
-			],
+			"@stylistic/object-curly-newline": [ "error", "always" ],
 			"@stylistic/semi-style": [ "error", "last" ],
 			"@stylistic/space-before-blocks": [ "error", "always" ],
 			"@stylistic/space-before-function-paren": [ "error", "never" ],

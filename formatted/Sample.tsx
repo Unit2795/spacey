@@ -3,10 +3,10 @@ import {
 	useState
 } from "react";
 
-type SampleProps = {
+interface SampleProps {
 	text: string
 	hello?: number
-};
+}
 
 class SampleClass {
 	public memberOne: string;
@@ -40,7 +40,7 @@ const keywordSpacing = ( a: boolean ) => {
 	}
 };
 
-function doBadStringConcat( name ) {
+function doBadStringConcat( name: string ) {
 	// Violates prefer-template, no-implicit-coercion, and single quotes
 	if ( name ) {
 		return `Hello ${ name }!`;
@@ -63,7 +63,11 @@ const Sample = () => {
 		<div>
 			<p
 				id="needDoubleQuotes"
-				onClick={ () => alert( 1 + 2 ) }
+				onClick={
+					() => {
+						alert( 1 + 2 );
+					}
+				}
 			>
 				Newlines needed!
 			</p>
