@@ -158,6 +158,9 @@ export default [
 					ignoreChainWithDepth: 2
 				}
 			],
+			"@stylistic/jsx-one-expression-per-line": [ "error", {
+				allow: "single-line"
+			} ],
 			"sort-imports": [
 				"error",
 				{
@@ -216,7 +219,6 @@ export default [
 			"react/jsx-indent": [ "error", "tab", {
 				indentLogicalExpressions: true
 			} ],
-			"react/jsx-one-expression-per-line": [ "error" ],
 			"react/jsx-no-useless-fragment": [ "error", {
 				allowExpressions: true
 			} ],
@@ -254,10 +256,7 @@ export default [
 				propElementValues: "always"
 			} ],
 			"react/jsx-closing-tag-location": [ "error" ],
-			"react/jsx-closing-bracket-location": [ "error", {
-				selfClosing: "line-aligned",
-				nonEmpty: "line-aligned"
-			} ],
+			"react/jsx-closing-bracket-location": [ "error", "after-props" ],
 			"react/jsx-boolean-value": [ "error", "never" ],
 			"react/hook-use-state": [ "error", {
 				"allowDestructuredState": true

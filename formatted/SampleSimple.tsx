@@ -20,14 +20,11 @@ function SampleSimple( {
 			<button
 				className="myclass"
 				type="button"
-				onClick={ handleClick }
-			>
+				onClick={ handleClick }>
 				Click me
 			</button>
 
-			<p>
-				Hello,World!
-			</p>
+			<p>Hello,World!</p>
 		</div>
 	);
 }

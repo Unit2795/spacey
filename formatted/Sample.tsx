@@ -68,8 +68,7 @@ const Sample = () => {
 					() => {
 						alert( 1 + 2 );
 					}
-				}
-			>
+				}>
 				Newlines needed!
 			</p>
 
@@ -88,8 +87,7 @@ const Sample = () => {
 
 						toggleOpen();
 					}
-				}
-			>
+				}>
 				Click me!
 			</button>
 
@@ -102,31 +100,16 @@ const Sample = () => {
 								{
 									color: isOpen ? "red" : "blue"
 								}
-							}
-						>
+							}>
 							{item}
 						</li>
 					) )
 				}
 			</ul>
 
-			{
-				Boolean( doubleNegation ) && (
-					<p>
-						Double negation
-					</p>
-				)
-			}
+			{Boolean( doubleNegation ) && <p>Double negation</p>}
 
-			{
-				isOpen
-					? (
-						<p>
-							This is open!
-						</p>
-					)
-					: null
-			}
+			{isOpen ? <p>This is open!</p> : null}
 		</div>
 	);
 };

@@ -1,7 +1,7 @@
 # ✨ Spacey 🛰️
 ![black hole banner image with planets](./assets/banner.png)
 
-> A style guide & coding standard for React TypeScript projects that emphasizes meticulous organization, performance optimization, best practices, explicit clarity, and generous use of whitespace, taking one giant leap for code clarity and readability.
+> A style guide & coding standard for React TypeScript projects powered by ESLint that emphasizes meticulous organization, performance optimization, best practices, explicit clarity, and generous use of whitespace, taking one giant leap for code clarity and readability. 
 
 🚧**ALPHA - UNDER ACTIVE DEVELOPMENT**🏗️
 
@@ -84,6 +84,19 @@ Try it out by running the following in your terminal:
 ```shell
 npx spacey
 ```
+
+### Why a CLI?
+Spacey is meant to be something you take and run with, extending and modifying it as you see fit. So you are given full control over the dependencies and the shared config file
+
+### Manual Installation
+If you prefer to install the dependencies and create the config file manually, follow these steps:
+1. Install the dependencies:
+    ```shell
+    npm install -D eslint @eslint/js @stylistic/eslint-plugin eslint-plugin-import-newlines eslint-plugin-newline-destructuring eslint-plugin-no-relative-import-paths eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-refresh globals typescript-eslint
+    ```
+2. Copy your desired ESLint rules from the shared config file in this repo [eslint-config-spacey.js](./eslint-config-spacey.js) to your project's ESLint config file.
+
+
 
 
 ## Developer Guide
