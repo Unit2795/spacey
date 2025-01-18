@@ -269,7 +269,8 @@ export default [
 					allowDestructuredState: true
 				}
 			],
-			"react/iframe-missing-sandbox": [ "error" ]
+			"react/iframe-missing-sandbox": [ "error" ],
+			"@typescript-eslint/no-misused-promises": "off"
 		},
 	}
 ];
