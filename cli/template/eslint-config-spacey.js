@@ -1,8 +1,9 @@
 /**
-	More information about the Spacey style guide: https://github.com/Unit2795/spacey
+	Shared ESLint config file for the Spacey style guide.
+	More information: https://github.com/Unit2795/spacey
 
-	Are you sure you want to edit this file? Consider extending it instead in your config.
-	Editing it directly may make it harder to update to a newer version in the future if Spacey is updated.
+	Are you sure you want to edit this file? Consider extending it in your own config instead.
+	Editing it directly may make it harder to update to a newer version in the future when Spacey is updated.
 */
 
 import js from "@eslint/js";

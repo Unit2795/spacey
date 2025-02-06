@@ -1,6 +1,6 @@
 {
   "name": "spacey",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A CLI to help set up the Spacey style guide's ESLint config in your project",
   "type": "module",
   "bin": {
@@ -11,8 +11,8 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "^5.4.1",
-    "commander": "^12.1.0",
+    "commander": "^13.1.0",
     "execa": "^9.5.2",
-    "inquirer": "^12.3.0"
+    "inquirer": "^12.4.1"
   }
 }
