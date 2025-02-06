@@ -1,6 +1,6 @@
 {
   "name": "spacey",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "A CLI to help set up the Spacey style guide's ESLint config in your project",
   "type": "module",
   "bin": {
