@@ -78,11 +78,11 @@ Spacey uses [ESLint](https://eslint.org/) and a collection of handy plugins to h
    1. Avoid some easier to catch React & JS footguns and implicit expectations that can lead to performance bottlenecks or unexpected behavior. Even at the cost of a little extra verbosity.
 
 ## CLI
-[Spacey CLI](./cli/README.md) helps you set up the Spacey style guide's ESLint config in your project by optionally installing the dev dependencies and/or creating the ESLint configuration file (or a sample config file you can pick and choose from or use as inspiration).
+[Spacey Install CLI](./cli/README.md) helps you set up the Spacey style guide's ESLint config in your project by optionally installing the dev dependencies and/or creating the ESLint configuration file (or a sample config file you can pick and choose from or use as inspiration).
 
 Try it out by running the following in your terminal:
 ```shell
-npx spacey
+npx spacey-install
 ```
 
 ### Why a CLI?

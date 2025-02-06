@@ -1,10 +1,10 @@
 {
-  "name": "spacey",
+  "name": "spacey-install",
   "version": "0.0.1",
   "description": "A CLI to help set up the Spacey style guide's ESLint config in your project",
   "type": "module",
   "bin": {
-    "spacey": "./bin/index.js"
+    "spacey": "bin/index.js"
   },
   "keywords": [],
   "author": "David Jozwik <d@djoz.us>",
