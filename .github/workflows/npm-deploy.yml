@@ -24,11 +24,12 @@ jobs:
 
       - name: Update version to match release
         run: |
-          # Extract version from release tag (remove 'v' prefix if present)
-          RELEASE_VERSION=${GITHUB_REF#refs/tags/v}
+          # Extract version from GitHub ref, handling both with and without 'v' prefix
+          RELEASE_VERSION=$(echo $GITHUB_REF | sed -e 's/refs\/tags\///' -e 's/^v//')
+          echo "Release version: $RELEASE_VERSION"
           
           # Update package.json version to match release
-          npm version $RELEASE_VERSION --no-git-tag-version
+          npm version $RELEASE_VERSION --no-git-tag-version --allow-same-version
 
       - name: Publish to NPM
         run: npm publish --access public
