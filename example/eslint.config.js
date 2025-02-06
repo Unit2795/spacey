@@ -1,6 +1,7 @@
 import globals from "globals";
 import tseslint from "typescript-eslint";
-import eslintConfigSpacey from "./cli/template/eslint-config-spacey.js";
+// eslint-disable-next-line no-relative-import-paths/no-relative-import-paths
+import eslintConfigSpacey from "../cli/template/eslint-config-spacey.js";
 
 export default tseslint.config(
 	{

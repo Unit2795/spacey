@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "format": "npm run copy && eslint --fix",
+    "format": "npm run copy && ../node_modules/.bin/eslint --fix",
     "copy": "node -e \"const fs=require('fs');fs.existsSync('formatted')&&fs.rmSync('formatted',{recursive:true});fs.cpSync('original','formatted',{recursive:true})\""
   },
   "keywords": [],

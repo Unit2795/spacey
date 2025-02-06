@@ -1,5 +1,5 @@
 # ✨ Spacey 🛰️
-![black hole banner image with planets](./assets/banner.png)
+![black hole banner image with planets](docs/banner.png)
 
 > A style guide & coding standard for React TypeScript projects powered by ESLint that emphasizes meticulous organization, performance optimization, best practices, explicit clarity, and generous use of whitespace, taking one giant leap for code clarity and readability. 
 
@@ -8,7 +8,7 @@
 -----
 
 ## Example
-Want to see more complex examples? Compare the [/original](./original) and [/formatted](./formatted) directories in the project root.
+Want to see more complex examples? Compare the [/original](example/original) and [/formatted](example/formatted) directories in the project root.
 
 **BEFORE**
 ```typescript jsx
@@ -103,9 +103,9 @@ If you prefer to install the dependencies and create the config file manually, f
 Want to try messing around with the code?
 ### Getting Started
 1. Clone the repo
-2. Run `pnpm install` in repo root
+2. Run `pnpm install` in `/example` directory
 3. Place some unformatted code in the `/original` directory
-4. Run `pnpm format` to copy the formatted code fixed by eslint to the `/formatted` directory
+4. Run `pnpm format` to output the formatted code fixed by eslint to the `/formatted` directory
 
 ### Project Structure
 - The example code in the `/original` directory contains the unmodified code that has not had `eslint --fix` applied yet. The fixed code will be copied to the `/formatted` directory after running `eslint --fix`.
